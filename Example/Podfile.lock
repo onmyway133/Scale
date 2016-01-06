@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Scale: 15eba9f2b0e006ecdb1097d00fd5ea4a628c4c71
+  Scale: 4be55bcccde50a97ada700d17b50943b2503f79c
 
 COCOAPODS: 0.39.0

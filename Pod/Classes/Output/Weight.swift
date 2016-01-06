@@ -16,7 +16,12 @@ public enum WeightUnit: Double {
     case dekagram = 10
     case hectogram = 100
     case kilogram = 1000
-    case metricTon = 1000000
+    case ton = 1000000
+    case carat = 0.2
+    case newton = 101.9716212978
+    case ounce = 28.349523125
+    case pound = 453.59237
+    case stone = 6350.29318 
 
     static var defaultScale: Double {
         return WeightUnit.gram.rawValue
@@ -31,9 +36,13 @@ public struct Weight {
         self.value = value
         self.unit = unit
     }
+
+    public func to(unit unit: WeightUnit) -> Weight {
+        return Weight(value: self.value * self.unit.rawValue * WeightUnit.gram.rawValue / unit.rawValue, unit: unit)
+    }
 }
 
-extension Double {
+public extension Double {
     public var milligram: Weight {
         return Weight(value: self, unit: .milligram)
     }
@@ -62,14 +71,34 @@ extension Double {
         return Weight(value: self, unit: .kilogram)
     }
 
-    public var metricTon: Weight {
-        return Weight(value: self, unit: .metricTon)
+    public var ton: Weight {
+        return Weight(value: self, unit: .ton)
+    }
+
+    public var carat: Weight {
+        return Weight(value: self, unit: .carat)
+    }
+
+    public var newton: Weight {
+        return Weight(value: self, unit: .newton)
+    }
+
+    public var ounce: Weight {
+        return Weight(value: self, unit: .ounce)
+    }
+
+    public var pound: Weight {
+        return Weight(value: self, unit: .pound)
+    }
+
+    public var stone: Weight {
+        return Weight(value: self, unit: .stone)
     }
 }
 
 public func compute(left: Weight, right: Weight, operation: (Double, Double) -> Double) -> Weight {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
-    let result = operation(min.value, max.value * WeightUnit.gram.rawValue * min.unit.rawValue)
+    let result = operation(min.value, max.to(unit: min.unit).value)
 
     return Weight(value: result, unit: min.unit)
 }

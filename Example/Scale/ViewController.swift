@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Scale
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let length = 5.kilometer + 7.meter
+        print(length)
+        let weight = 10.0.kilogram * 5.gram
+        print(weight)
+
+        let dekameter = length.to(unit: .dekameter)
+        print(dekameter)
     }
 
     override func didReceiveMemoryWarning() {

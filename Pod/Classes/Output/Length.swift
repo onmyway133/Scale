@@ -16,6 +16,13 @@ public enum LengthUnit: Double {
     case dekameter = 10
     case hectometer = 100
     case kilometer = 1000
+    case yard = 0.9144
+    case parsec = 30856775813060000
+    case mile = 1609.344
+    case foot = 0.3048
+    case fathom = 1.8288
+    case inch = 0.0254
+    case league = 4828.032
 
     static var defaultScale: Double {
         return LengthUnit.meter.rawValue
@@ -30,9 +37,13 @@ public struct Length {
         self.value = value
         self.unit = unit
     }
+
+    public func to(unit unit: LengthUnit) -> Length {
+        return Length(value: self.value * self.unit.rawValue * LengthUnit.meter.rawValue / unit.rawValue, unit: unit)
+    }
 }
 
-extension Double {
+public extension Double {
     public var millimeter: Length {
         return Length(value: self, unit: .millimeter)
     }
@@ -60,11 +71,39 @@ extension Double {
     public var kilometer: Length {
         return Length(value: self, unit: .kilometer)
     }
+
+    public var yard: Length {
+        return Length(value: self, unit: .yard)
+    }
+
+    public var parsec: Length {
+        return Length(value: self, unit: .parsec)
+    }
+
+    public var mile: Length {
+        return Length(value: self, unit: .mile)
+    }
+
+    public var foot: Length {
+        return Length(value: self, unit: .foot)
+    }
+
+    public var fathom: Length {
+        return Length(value: self, unit: .fathom)
+    }
+
+    public var inch: Length {
+        return Length(value: self, unit: .inch)
+    }
+
+    public var league: Length {
+        return Length(value: self, unit: .league)
+    }
 }
 
 public func compute(left: Length, right: Length, operation: (Double, Double) -> Double) -> Length {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
-    let result = operation(min.value, max.value * LengthUnit.meter.rawValue * min.unit.rawValue)
+    let result = operation(min.value, max.to(unit: min.unit).value)
 
     return Length(value: result, unit: min.unit)
 }

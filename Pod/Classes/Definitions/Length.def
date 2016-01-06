@@ -6,6 +6,13 @@ public enum LengthUnit: Double {
     case dekameter = 10
     case hectometer = 100
     case kilometer = 1000
+    case yard = 0.9144
+    case parsec = 30856775813060000
+    case mile = 1609.344
+    case foot = 0.3048
+    case fathom = 1.8288
+    case inch = 0.0254
+    case league = 4828.032
 
     static var defaultScale: Double {
         return LengthUnit.meter.rawValue

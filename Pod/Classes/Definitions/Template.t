@@ -18,15 +18,19 @@ public struct <<Name>> {
         self.value = value
         self.unit = unit
     }
+
+    public func to(unit unit: <<UnitName>>) -> <<Name>> {
+        return <<Name>>(value: self.value * self.unit.rawValue * <<UnitName>>.<<DefaultScale>>.rawValue / unit.rawValue, unit: unit)
+    }
 }
 
-extension Double {
+public extension Double {
 <<Units>>
 }
 
 public func compute(left: <<Name>>, right: <<Name>>, operation: (Double, Double) -> Double) -> <<Name>> {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
-    let result = operation(min.value, max.value * <<UnitName>>.<<DefaultScale>>.rawValue * min.unit.rawValue)
+    let result = operation(min.value, max.to(unit: min.unit).value)
 
     return <<Name>>(value: result, unit: min.unit)
 }
