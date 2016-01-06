@@ -1,0 +1,6 @@
+framework module Scale {
+  umbrella header "Scale-umbrella.h"
+
+  export *
+  module * { export * }
+}

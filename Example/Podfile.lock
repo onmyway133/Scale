@@ -1,0 +1,14 @@
+PODS:
+  - Scale (0.1.0)
+
+DEPENDENCIES:
+  - Scale (from `../`)
+
+EXTERNAL SOURCES:
+  Scale:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Scale: 15eba9f2b0e006ecdb1097d00fd5ea4a628c4c71
+
+COCOAPODS: 0.39.0
