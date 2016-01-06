@@ -1,87 +1,49 @@
 //
-//  Length.swift
-//  Pods
+//  <<Name>>.swift
+//  Scale
 //
-//  Created by Khoa Pham on 1/6/16.
+//  Created by Khoa Pham
 //  Copyright © 2016 Fantageek. All rights reserved.
 //
 
 import Foundation
 
-public enum LengthUnit: Double {
-    case millimeter = 0.001
-    case centimeter = 0.01
-    case decimeter = 0.1
-    case meter = 1
-    case dekameter = 10
-    case hectometer = 100
-    case kilometer = 1000
+<<Def>>
 
-    static var defaultScale: Double {
-        return LengthUnit.meter.rawValue
-    }
-}
+public struct <<Name>> {
+    public let value: Double
+    public let unit: <<UnitName>>
 
-public struct Length {
-    let value: Double
-    let unit: LengthUnit
-
-    public init(value: Double, unit: LengthUnit) {
+    public init(value: Double, unit: <<UnitName>>) {
         self.value = value
         self.unit = unit
     }
 }
 
 extension Double {
-    public var millimeter: Length {
-        return Length(value: self, unit: .millimeter)
-    }
-
-    public var centimeter: Length {
-        return Length(value: self, unit: .centimeter)
-    }
-
-    public var decimeter: Length {
-        return Length(value: self, unit: .decimeter)
-    }
-
-    public var meter: Length {
-        return Length(value: self, unit: .meter)
-    }
-
-    public var dekameter: Length {
-        return Length(value: self, unit: .dekameter)
-    }
-
-    public var hectometer: Length {
-        return Length(value: self, unit: .hectometer)
-    }
-
-    public var kilometer: Length {
-        return Length(value: self, unit: .kilometer)
-    }
+<<Units>>
 }
 
-public func compute(left: Length, right: Length, operation: (Double, Double) -> Double) -> Length {
+public func compute(left: <<Name>>, right: <<Name>>, operation: (Double, Double) -> Double) -> <<Name>> {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
-    let result = operation(min.value, max.value * LengthUnit.defaultScale * min.unit.rawValue)
+    let result = operation(min.value, max.value * <<UnitName>>.<<DefaultScale>>.rawValue * min.unit.rawValue)
 
-    return Length(value: result, unit: min.unit)
+    return <<Name>>(value: result, unit: min.unit)
 }
 
-public func +(left: Length, right: Length) -> Length {
+public func +(left: <<Name>>, right: <<Name>>) -> <<Name>> {
     return compute(left, right: right, operation: +)
 }
 
-public func -(left: Length, right: Length) -> Length {
+public func -(left: <<Name>>, right: <<Name>>) -> <<Name>> {
     return compute(left, right: right, operation: -)
 }
 
-public func *(left: Length, right: Length) -> Length {
+public func *(left: <<Name>>, right: <<Name>>) -> <<Name>> {
     return compute(left, right: right, operation: *)
 }
 
-public func /(left: Length, right: Length) throws -> Length {
+public func /(left: <<Name>>, right: <<Name>>) throws -> <<Name>> {
     guard right.value != 0 else {
         throw Error.DividedByZero
     }

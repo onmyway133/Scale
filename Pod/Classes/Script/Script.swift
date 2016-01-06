@@ -45,7 +45,11 @@ extension String {
     }
 
     func remove(string: String) -> String {
-        return (self as NSString).stringByReplacingOccurrencesOfString(string, withString: "")
+        return self.replace(string, replacement: "")
+    }
+
+    func replace(string: String, replacement: String) -> String {
+        return (self as NSString).stringByReplacingOccurrencesOfString(string, withString: replacement)
     }
 }
 
@@ -90,15 +94,15 @@ func write(filePath: String, content: String) throws {
 
 // DATA
 class Definition {
-    var name = ""
-    var units = [String: String]()
-    var defaultScale = ""
+    var name = ""   // Ex: Length
+    var units = [(String, String)]()    // Ex: (kilometer, 1000)
+    var defaultScale = ""   // Ex: meter
 
     init() {
 
     }
 
-    var enumName: String {
+    var unitName: String {
         return name + "Unit"
     }
 }
@@ -111,12 +115,14 @@ func action() throws {
     let outputPath = currentDirectory().parentDirectory().append("Output")
 
     for defFileName in try defFileNames() {
+        print(defFileName)
+
         let defPath = definitionPath().append(defFileName).correctPath
 
         let def = try read(defPath)
         let definition = try parse(def)
 
-        let result = apply(template, definition: definition)
+        let result = apply(def, template: template, definition: definition)
         let resultPath = outputPath.append(definition.name + ".swift")
 
         try write(resultPath.correctPath, content: result)
@@ -136,12 +142,12 @@ func parse(def: String) throws -> Definition {
     }()
 
     definition.units = try {
-        var units = [String: String]()
+        var units = [(String, String)]()
 
         try NSRegularExpression.find("case.+", string: def).forEach { match in
             let trim = match.remove("case").remove(" ").split("=")
 
-            units[trim.first ?? ""] = trim.last ?? ""
+            units.append((trim.first ?? "", trim.last ?? ""))
         }
 
         return units
@@ -159,9 +165,43 @@ func parse(def: String) throws -> Definition {
     return definition
 }
 
-func apply(template: String, definition: Definition) -> String {
-    return ""
+func apply(def: String, template: String, definition: Definition) -> String {
+    // Def
+    var result = template.replace("<<Def>>", replacement: def)
+
+    // Name
+    result = result.replace("<<Name>>", replacement: definition.name)
+
+    // Unit Name
+    result = result.replace("<<UnitName>>", replacement: definition.unitName)
+
+    // Default Scale
+    result = result.replace("<<DefaultScale>>", replacement: definition.defaultScale)
+
+    // Units
+    let units = definition.units.map { (key, value) in
+        return "    public var \(key): \(definition.name) {\n"
+            + "        return \(definition.name)(value: self, unit: .\(key))\n"
+            + "    }"
+    }.joinWithSeparator("\n\n")
+
+    result = result.replace("<<Units>>", replacement: units)
+    
+
+    return result
 }
 
 // MAIN
-try action()
+func main(){
+    print("Begin ...")
+
+    do {
+        try action()
+    } catch {
+        print("Something went wrong")
+    }
+
+    print("Done ^^")
+}
+
+main()

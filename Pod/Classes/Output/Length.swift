@@ -1,8 +1,8 @@
 //
 //  Length.swift
-//  Pods
+//  Scale
 //
-//  Created by Khoa Pham on 1/6/16.
+//  Created by Khoa Pham
 //  Copyright © 2016 Fantageek. All rights reserved.
 //
 
@@ -23,8 +23,8 @@ public enum LengthUnit: Double {
 }
 
 public struct Length {
-    let value: Double
-    let unit: LengthUnit
+    public let value: Double
+    public let unit: LengthUnit
 
     public init(value: Double, unit: LengthUnit) {
         self.value = value
@@ -64,7 +64,7 @@ extension Double {
 
 public func compute(left: Length, right: Length, operation: (Double, Double) -> Double) -> Length {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
-    let result = operation(min.value, max.value * LengthUnit.defaultScale * min.unit.rawValue)
+    let result = operation(min.value, max.value * LengthUnit.meter.rawValue * min.unit.rawValue)
 
     return Length(value: result, unit: min.unit)
 }
