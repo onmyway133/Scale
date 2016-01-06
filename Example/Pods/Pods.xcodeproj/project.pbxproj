@@ -16,8 +16,11 @@
 		65C6C945C8835E2B129AF4136E8DD7FB /* Scale.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1EEC67CE3369F709C4A77AD3D539C2F /* Scale.bundle */; };
 		8AE7576EB34DFBA1EDA9F84671C0A3AC /* Pods-Scale_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB0D4BE5F3DFC7F10F9168E86B153F /* Pods-Scale_Example-dummy.m */; };
 		C8BBAA3F9EB70FC59FFF8B1F9A6F6632 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		D2068D2A1C3D2922006FC643 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2068D291C3D2922006FC643 /* Length.swift */; };
-		D2068D2C1C3D2F59006FC643 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2068D2B1C3D2F59006FC643 /* Error.swift */; };
+		D2068D321C3D2FD4006FC643 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2068D2F1C3D2FD4006FC643 /* Error.swift */; };
+		D2068D331C3D2FD4006FC643 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2068D301C3D2FD4006FC643 /* Length.swift */; };
+		D2068D351C3D2FE6006FC643 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2068D341C3D2FE6006FC643 /* Script.swift */; };
+		D2068D371C3D2FFA006FC643 /* Length.def in Sources */ = {isa = PBXBuildFile; fileRef = D2068D361C3D2FFA006FC643 /* Length.def */; };
+		D2068D391C3D3672006FC643 /* Template.t in Resources */ = {isa = PBXBuildFile; fileRef = D2068D381C3D3672006FC643 /* Template.t */; };
 		DF3E11719CBAEDA2EBCD830676C87CE0 /* Scale-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D84A518A6F20E2A31457B3D1E90AE4 /* Scale-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +74,11 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C7C99CB94D033D34093F8DD3AEB118A1 /* Scale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Scale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3987290FDC6FBFBB6A71B3F1B1D698 /* Pods-Scale_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Scale_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D2068D291C3D2922006FC643 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
-		D2068D2B1C3D2F59006FC643 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D2068D2F1C3D2FD4006FC643 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D2068D301C3D2FD4006FC643 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
+		D2068D341C3D2FE6006FC643 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		D2068D361C3D2FFA006FC643 /* Length.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Length.def; sourceTree = "<group>"; };
+		D2068D381C3D3672006FC643 /* Template.t */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template.t; sourceTree = "<group>"; };
 		D30D9B750CF22EA95E21F091FEE23A54 /* Pods-Scale_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Scale_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D5D84A518A6F20E2A31457B3D1E90AE4 /* Scale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Scale-dummy.m"; sourceTree = "<group>"; };
 		D822BA28C3CEED6678BD7A61DCD085D7 /* Pods_Scale_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scale_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +135,9 @@
 		262CC2BA45AD207B231689022D18F3DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D2068D291C3D2922006FC643 /* Length.swift */,
-				D2068D2B1C3D2F59006FC643 /* Error.swift */,
+				D2068D2D1C3D2FD4006FC643 /* Definitions */,
+				D2068D2E1C3D2FD4006FC643 /* Output */,
+				D2068D311C3D2FD4006FC643 /* Script */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -233,6 +240,32 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		D2068D2D1C3D2FD4006FC643 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				D2068D361C3D2FFA006FC643 /* Length.def */,
+				D2068D381C3D3672006FC643 /* Template.t */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		D2068D2E1C3D2FD4006FC643 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				D2068D2F1C3D2FD4006FC643 /* Error.swift */,
+				D2068D301C3D2FD4006FC643 /* Length.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		D2068D311C3D2FD4006FC643 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				D2068D341C3D2FE6006FC643 /* Script.swift */,
+			);
+			path = Script;
 			sourceTree = "<group>";
 		};
 		E4428B764BA832CD28DBADCC065BEC76 /* Support Files */ = {
@@ -387,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C6C945C8835E2B129AF4136E8DD7FB /* Scale.bundle in Resources */,
+				D2068D391C3D3672006FC643 /* Template.t in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,8 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2068D2A1C3D2922006FC643 /* Length.swift in Sources */,
-				D2068D2C1C3D2F59006FC643 /* Error.swift in Sources */,
+				D2068D351C3D2FE6006FC643 /* Script.swift in Sources */,
+				D2068D371C3D2FFA006FC643 /* Length.def in Sources */,
+				D2068D321C3D2FD4006FC643 /* Error.swift in Sources */,
+				D2068D331C3D2FD4006FC643 /* Length.swift in Sources */,
 				DF3E11719CBAEDA2EBCD830676C87CE0 /* Scale-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

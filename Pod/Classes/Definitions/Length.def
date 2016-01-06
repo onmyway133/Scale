@@ -1,0 +1,13 @@
+public enum LengthUnit: Double {
+    case millimeter = 0.001
+    case centimeter = 0.01
+    case decimeter = 0.1
+    case meter = 1
+    case dekameter = 10
+    case hectometer = 100
+    case kilometer = 1000
+
+    static var defaultScale: Double {
+        return LengthUnit.meter.rawValue
+    }
+}
