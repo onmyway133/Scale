@@ -13,14 +13,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let length = 5.kilometer + 7.meter
-        print(length)
-        let weight = 10.0.kilogram * 5.gram
-        print(weight)
-
-        let dekameter = length.to(unit: .dekameter)
-        print(dekameter)
     }
 
     override func didReceiveMemoryWarning() {

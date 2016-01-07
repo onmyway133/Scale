@@ -17,7 +17,7 @@ public enum VolumeUnit: Double {
     case hectoliter = 100
     case kiloliter = 1000
     case gill = 0.11829411825
-    case gallon = 4.54609
+    case gallon = 3.78541
     case pint = 0.473176473
     case quart = 1.1365225
 

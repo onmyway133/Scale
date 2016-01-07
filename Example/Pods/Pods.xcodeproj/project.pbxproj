@@ -25,6 +25,9 @@
 		D216935B1C3E105200EB0DAF /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21693581C3E105200EB0DAF /* Metric.swift */; };
 		D216935C1C3E105200EB0DAF /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21693591C3E105200EB0DAF /* Power.swift */; };
 		D216935D1C3E105200EB0DAF /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216935A1C3E105200EB0DAF /* Volume.swift */; };
+		D21693611C3E13B400EB0DAF /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216935E1C3E13B400EB0DAF /* Angle.swift */; };
+		D21693621C3E13B400EB0DAF /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216935F1C3E13B400EB0DAF /* Area.swift */; };
+		D21693631C3E13B400EB0DAF /* Energy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21693601C3E13B400EB0DAF /* Energy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		D21693581C3E105200EB0DAF /* Metric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
 		D21693591C3E105200EB0DAF /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
 		D216935A1C3E105200EB0DAF /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		D216935E1C3E13B400EB0DAF /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		D216935F1C3E13B400EB0DAF /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		D21693601C3E13B400EB0DAF /* Energy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Energy.swift; sourceTree = "<group>"; };
 		D30D9B750CF22EA95E21F091FEE23A54 /* Pods-Scale_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Scale_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D5D84A518A6F20E2A31457B3D1E90AE4 /* Scale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Scale-dummy.m"; sourceTree = "<group>"; };
 		D822BA28C3CEED6678BD7A61DCD085D7 /* Pods_Scale_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scale_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +147,9 @@
 		3C1CD0FE82A2FBBD1ED3AC1DCBFC1A06 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				D216935E1C3E13B400EB0DAF /* Angle.swift */,
+				D216935F1C3E13B400EB0DAF /* Area.swift */,
+				D21693601C3E13B400EB0DAF /* Energy.swift */,
 				D21693581C3E105200EB0DAF /* Metric.swift */,
 				D21693591C3E105200EB0DAF /* Power.swift */,
 				D216935A1C3E105200EB0DAF /* Volume.swift */,
@@ -437,6 +446,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21693571C3E0D6A00EB0DAF /* Time.swift in Sources */,
+				D21693631C3E13B400EB0DAF /* Energy.swift in Sources */,
+				D21693611C3E13B400EB0DAF /* Angle.swift in Sources */,
 				1BD69783E8BE712513F42D6038D7D0EA /* Error.swift in Sources */,
 				0C10A263EC3377F48901BE547A9A34BB /* Length.swift in Sources */,
 				D216935D1C3E105200EB0DAF /* Volume.swift in Sources */,
@@ -444,6 +455,7 @@
 				BF2D776FC3456707DCDEE7BB0C4D4D90 /* Scale-dummy.m in Sources */,
 				D21693561C3E0D6A00EB0DAF /* Temperature.swift in Sources */,
 				D216935B1C3E105200EB0DAF /* Metric.swift in Sources */,
+				D21693621C3E13B400EB0DAF /* Area.swift in Sources */,
 				CE31A8B72FA7A288FFCF8C3712F8ADCD /* Weight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

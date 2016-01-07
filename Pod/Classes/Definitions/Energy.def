@@ -1,0 +1,11 @@
+public enum EnergyUnit: Double {
+    case joule = 1
+    case kilojoule = 1000
+    case gramcalorie = 4.184
+    case kilocalorie = 4184
+    case watthour = 3600
+
+    static var defaultScale: Double {
+        return EnergyUnit.joule.rawValue
+    }
+}

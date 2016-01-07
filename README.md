@@ -26,7 +26,7 @@ let weight = 10.0.kilogram * 5.gram // 50000 gram
 - Convert to any unit of the same type
 
 ```
-let dekameter = length.to(unit: .dekameter) // 500.7 dekameter
+2.week.to(unit: .hour) // 336 hour
 ```
 
 ### Support
@@ -73,9 +73,9 @@ let weight = 5.kilogram + 2.pound
 
 ## Add more
 
-- Add `new_definition.def` inside `Definitions` group
-- Run `Script.swift` inside `Script` group
-- Add newly generated file into `Output` group
+- Add new definition file with extension `.def` inside `Definitions` group
+- Run `xcrun swift Script.swift` inside `Script` group
+- Add newly generated files into `Output` group, target Scale
 - Go into `Example` and `pod install`
 
 ## Installation

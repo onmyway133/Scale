@@ -1,0 +1,13 @@
+public enum AreaUnit: Double {
+    case squareFoot = 0.092903
+    case squareYard = 0.836127
+    case squareMeter = 1
+    case squareKilometer = 1000000
+    case squareMile = 2589988.11
+    case acre = 4046.86
+    case hectare = 10000
+
+    static var defaultScale: Double {
+        return AreaUnit.squareMeter.rawValue
+    }
+}
