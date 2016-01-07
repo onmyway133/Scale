@@ -15,6 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### Unit
 
 - Strongly typed unit
+- Division may throw error
 - Operation upon same type, the result is the smaller unit of the two
 
 ```
@@ -30,8 +31,45 @@ let dekameter = length.to(unit: .dekameter) // 500.7 dekameter
 
 ### Support
 
+- Angle
+```
+let angle = 5.degree + 2.radian
+```
+
+- Area
+```
+let area = 5.acre + 2.hectare
+```
+
+- Energy
+```
+let energy = 5.joule + 2.watthour
+```
+
+- Metric
+```
+let metric = 5.base + 2.kilo
+```
+
+- Volume
+```
+let volume = 5.liter + 2.gallon
+```
+
+- Time
+```
+let time = 5.day + 2.hour
+```
+
 - Length
+```
+let length = 5.yard + 2.meter
+```
+
 - Weight
+```
+let weight = 5.kilogram + 2.pound
+```
 
 ## Add more
 
