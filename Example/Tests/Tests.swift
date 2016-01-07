@@ -24,6 +24,10 @@ class Tests: XCTestCase {
         XCTAssert(volume.unit == VolumeUnit.liter)
         XCTAssertEqualWithAccuracy(volume.value, 12.5708236, accuracy: 1)
 
+        let temperature = 5.fahrenheit + 2.celsius
+        XCTAssert(temperature.unit == TemperatureUnit.fahrenheit)
+        XCTAssertEqualWithAccuracy(temperature.value, 40.6, accuracy: 0.001)
+
         let time = 5.day + 2.hour
         XCTAssert(time.unit == TimeUnit.hour)
         XCTAssertEqualWithAccuracy(time.value, 122, accuracy: 0)
@@ -40,5 +44,15 @@ class Tests: XCTestCase {
     func testConverting() {
         XCTAssertEqualWithAccuracy(2.hour.to(unit: .week).value, 0.0119048, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(2.week.to(unit: .hour).value, 336, accuracy: 0)
+    }
+
+    func testTemperature() {
+        XCTAssertEqualWithAccuracy(20.celsius.to(unit: .fahrenheit).value, 68, accuracy: 0)
+        XCTAssertEqualWithAccuracy(10.celsius.to(unit: .kelvin).value, 283.15, accuracy: 0)
+        XCTAssertEqualWithAccuracy(68.fahrenheit.to(unit: .celsius).value, 20, accuracy: 0)
+        XCTAssertEqualWithAccuracy(60.fahrenheit.to(unit: .kelvin).value, 288.71, accuracy: 0.1)
+        XCTAssertEqualWithAccuracy(300.kelvin.to(unit: .celsius).value, 26.85, accuracy: 0.1)
+        XCTAssertEqualWithAccuracy(300.kelvin.to(unit: .fahrenheit).value, 80.33, accuracy: 0.1)
+        XCTAssertEqualWithAccuracy(20.celsius.to(unit: .celsius).value, 20, accuracy: 0)
     }
 }

@@ -28,7 +28,22 @@ public struct Temperature {
     }
 
     public func to(unit unit: TemperatureUnit) -> Temperature {
-        return Temperature(value: self.value * self.unit.rawValue * TemperatureUnit.kelvin.rawValue / unit.rawValue, unit: unit)
+        switch (self.unit, unit) {
+        case (.celsius, .fahrenheit):
+            return Temperature(value: self.value * 1.8 + 32, unit: unit)
+        case (.celsius, .kelvin):
+            return Temperature(value: self.value + 273.15, unit: unit)
+        case (.fahrenheit, .celsius):
+            return Temperature(value: (self.value - 32) / 1.8, unit: unit)
+        case (.fahrenheit, .kelvin):
+            return Temperature(value: (self.value + 459.67) / 1.8, unit: unit)
+        case (.kelvin, .celsius):
+            return Temperature(value: self.value - 273.15, unit: unit)
+        case (.kelvin, .fahrenheit):
+            return Temperature(value: self.value * 1.8 - 459.67, unit: unit)
+        case (_, _):
+            return self
+        }
     }
 }
 

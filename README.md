@@ -56,6 +56,11 @@ let metric = 5.base + 2.kilo
 let volume = 5.liter + 2.gallon
 ```
 
+- Temperature
+```
+let temperature = 5.fahrenheit + 2.celsius
+```
+
 - Time
 ```
 let time = 5.day + 2.hour
@@ -71,12 +76,16 @@ let length = 5.yard + 2.meter
 let weight = 5.kilogram + 2.pound
 ```
 
-## Add more
+### Add more
 
 - Add new definition file with extension `.def` inside `Definitions` group
 - Run `xcrun swift Script.swift` inside `Script` group
 - Add newly generated files into `Output` group, target Scale
 - Go into `Example` and `pod install`
+
+## Notes
+
+Some unit types like `Temperature` must be converted manually
 
 ## Installation
 
