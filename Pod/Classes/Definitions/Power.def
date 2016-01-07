@@ -1,0 +1,12 @@
+public enum PowerUnit: Double {
+    case milliwatt = 0.001
+    case watt = 1
+    case kilowatt = 1000
+    case megawatt = 1000000
+    case gigawatt = 1000000000
+    case horsepower = 745.6998715823
+
+    static var defaultScale: Double {
+        return PowerUnit.watt.rawValue
+    }
+}
