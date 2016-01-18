@@ -5,6 +5,7 @@ Unit converter in Swift
 [![Version](https://img.shields.io/cocoapods/v/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
 [![License](https://img.shields.io/cocoapods/l/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
 [![Platform](https://img.shields.io/cocoapods/p/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Usage
 
