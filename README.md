@@ -19,61 +19,61 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 - Division may throw error
 - Operation upon same type, the result is the smaller unit of the two
 
-```
+```swift
 let length = 5.kilometer + 7.meter  // 5007 meter
 let weight = 10.0.kilogram * 5.gram // 50000 gram
 ```
 
 - Convert to any unit of the same type
 
-```
+```swift
 2.week.to(unit: .hour) // 336 hour
 ```
 
 ### Support
 
 - Angle
-```
+```swift
 let angle = 5.degree + 2.radian
 ```
 
 - Area
-```
+```swift
 let area = 5.acre + 2.hectare
 ```
 
 - Energy
-```
+```swift
 let energy = 5.joule + 2.watthour
 ```
 
 - Metric
-```
+```swift
 let metric = 5.base + 2.kilo
 ```
 
 - Volume
-```
+```swift
 let volume = 5.liter + 2.gallon
 ```
 
 - Temperature
-```
+```swift
 let temperature = 5.fahrenheit + 2.celsius
 ```
 
 - Time
-```
+```swift
 let time = 5.day + 2.hour
 ```
 
 - Length
-```
+```swift
 let length = 5.yard + 2.meter
 ```
 
 - Weight
-```
+```swift
 let weight = 5.kilogram + 2.pound
 ```
 
