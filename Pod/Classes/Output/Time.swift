@@ -9,21 +9,21 @@
 import Foundation
 
 public enum TimeUnit: Double {
-    case nanosecond = 0.000000001
-    case microsecond = 0.000001
+    case nanosecond = 0.000_000_001
+    case microsecond = 0.000_001
     case millisecond = 0.001
     case centisecond = 0.01
     case second = 1
     case minute = 60
-    case hour = 3600
-    case day = 86400
-    case week = 604800
-    case fortnight = 1209600
-    case month = 2629822.96584
-    case year = 31536000
-    case decade = 315360000
-    case century = 3153600000
-    case millennium = 31536000000
+    case hour = 3_600
+    case day = 86_400
+    case week = 604_800
+    case fortnight = 1_209_600
+    case month = 2_629_822.965_84
+    case year = 31_536_000
+    case decade = 315_360_000
+    case century = 3_153_600_000
+    case millennium = 31_536_000_000
 
     static var defaultScale: Double {
         return TimeUnit.second.rawValue

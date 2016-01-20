@@ -10,10 +10,10 @@ import Foundation
 
 public enum EnergyUnit: Double {
     case joule = 1
-    case kilojoule = 1000
+    case kilojoule = 1_000
     case gramcalorie = 4.184
-    case kilocalorie = 4184
-    case watthour = 3600
+    case kilocalorie = 4_184
+    case watthour = 3_600
 
     static var defaultScale: Double {
         return EnergyUnit.joule.rawValue

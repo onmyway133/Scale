@@ -9,13 +9,13 @@
 import Foundation
 
 public enum AreaUnit: Double {
-    case squareFoot = 0.092903
-    case squareYard = 0.836127
+    case squareFoot = 0.092_903
+    case squareYard = 0.836_127
     case squareMeter = 1
-    case squareKilometer = 1000000
-    case squareMile = 2589988.11
-    case acre = 4046.86
-    case hectare = 10000
+    case squareKilometer = 1_000_000
+    case squareMile = 2_589_988.11
+    case acre = 4_046.86
+    case hectare = 10_000
 
     static var defaultScale: Double {
         return AreaUnit.squareMeter.rawValue

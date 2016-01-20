@@ -10,7 +10,7 @@ import Foundation
 
 public enum AngleUnit: Double {
     case degree = 1
-    case radian = 57.2958
+    case radian = 57.295_8
     case pi = 180
 
     static var defaultScale: Double {

@@ -1,15 +1,15 @@
 public enum VolumeUnit: Double {
-    case microliter = 0.000001
+    case microliter = 0.000_001
     case milliliter = 0.001
     case centiliter = 0.01
     case liter = 1
     case dekaliter = 10
     case hectoliter = 100
-    case kiloliter = 1000
-    case gill = 0.11829411825
-    case gallon = 3.78541
-    case pint = 0.473176473
-    case quart = 1.1365225
+    case kiloliter = 1_000
+    case gill = 0.118_294_118_25
+    case gallon = 3.785_41
+    case pint = 0.473_176_473
+    case quart = 1.136_522_5
 
     static var defaultScale: Double {
         return VolumeUnit.liter.rawValue

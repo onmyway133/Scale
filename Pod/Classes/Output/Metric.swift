@@ -9,19 +9,19 @@
 import Foundation
 
 public enum MetricUnit: Double {
-    case nano = 0.000000001
-    case micro = 0.000001
+    case nano = 0.000_000_001
+    case micro = 0.000_001
     case milli = 0.001
     case centi = 0.01
     case deci = 0.1
     case base = 1
     case deka = 10
     case hecto = 100
-    case kilo = 1000
-    case mega = 1000000
-    case giga = 1000000000
-    case tera = 1000000000000
-    case peta = 1000000000000000
+    case kilo = 1_000
+    case mega = 1_000_000
+    case giga = 1_000_000_000
+    case tera = 1_000_000_000_000
+    case peta = 1_000_000_000_000_000
 
     static var defaultScale: Double {
         return MetricUnit.base.rawValue
