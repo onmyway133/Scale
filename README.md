@@ -7,6 +7,8 @@ Unit converter in Swift
 [![Platform](https://img.shields.io/cocoapods/p/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+![](Screenshots/Banner.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
