@@ -1,0 +1,19 @@
+public enum WeightUnit: Double {
+    case milligram = 0.001
+    case centigram = 0.01
+    case decigram = 0.1
+    case gram = 1
+    case dekagram = 10
+    case hectogram = 100
+    case kilogram = 1_000
+    case ton = 1_000_000
+    case carat = 0.2
+    case newton = 101.971_621_297_8
+    case ounce = 28.349_523_125
+    case pound = 453.592_37
+    case stone = 6_350.293_18 
+
+    static var defaultScale: Double {
+        return WeightUnit.gram.rawValue
+    }
+}
