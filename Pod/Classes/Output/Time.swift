@@ -39,7 +39,7 @@ public struct Time {
         self.unit = unit
     }
 
-    public func to(unit unit: TimeUnit) -> Time {
+    public func to(unit: TimeUnit) -> Time {
         return Time(value: self.value * self.unit.rawValue * TimeUnit.second.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -106,7 +106,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Time, right: Time, operation: (Double, Double) -> Double) -> Time {
+public func compute(_ left: Time, right: Time, operation: (Double, Double) -> Double) -> Time {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -127,7 +127,7 @@ public func *(left: Time, right: Time) -> Time {
 
 public func /(left: Time, right: Time) throws -> Time {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

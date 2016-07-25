@@ -35,7 +35,7 @@ public struct Volume {
         self.unit = unit
     }
 
-    public func to(unit unit: VolumeUnit) -> Volume {
+    public func to(unit: VolumeUnit) -> Volume {
         return Volume(value: self.value * self.unit.rawValue * VolumeUnit.liter.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -86,7 +86,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Volume, right: Volume, operation: (Double, Double) -> Double) -> Volume {
+public func compute(_ left: Volume, right: Volume, operation: (Double, Double) -> Double) -> Volume {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -107,7 +107,7 @@ public func *(left: Volume, right: Volume) -> Volume {
 
 public func /(left: Volume, right: Volume) throws -> Volume {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

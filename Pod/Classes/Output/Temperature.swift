@@ -27,7 +27,7 @@ public struct Temperature {
         self.unit = unit
     }
 
-    public func to(unit unit: TemperatureUnit) -> Temperature {
+    public func to(unit: TemperatureUnit) -> Temperature {
         switch (self.unit, unit) {
         case (.celsius, .fahrenheit):
             return Temperature(value: self.value * 1.8 + 32, unit: unit)
@@ -61,7 +61,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Temperature, right: Temperature, operation: (Double, Double) -> Double) -> Temperature {
+public func compute(_ left: Temperature, right: Temperature, operation: (Double, Double) -> Double) -> Temperature {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -82,7 +82,7 @@ public func *(left: Temperature, right: Temperature) -> Temperature {
 
 public func /(left: Temperature, right: Temperature) throws -> Temperature {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Error: ErrorType {
-    case DividedByZero
+enum Error: ErrorProtocol {
+    case dividedByZero
 }
