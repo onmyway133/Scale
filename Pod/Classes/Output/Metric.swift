@@ -37,7 +37,7 @@ public struct Metric {
         self.unit = unit
     }
 
-    public func to(unit unit: MetricUnit) -> Metric {
+    public func to(unit: MetricUnit) -> Metric {
         return Metric(value: self.value * self.unit.rawValue * MetricUnit.base.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -96,7 +96,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Metric, right: Metric, operation: (Double, Double) -> Double) -> Metric {
+public func compute(_ left: Metric, right: Metric, operation: (Double, Double) -> Double) -> Metric {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -117,7 +117,7 @@ public func *(left: Metric, right: Metric) -> Metric {
 
 public func /(left: Metric, right: Metric) throws -> Metric {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

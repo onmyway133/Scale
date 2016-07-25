@@ -30,7 +30,7 @@ public struct Power {
         self.unit = unit
     }
 
-    public func to(unit unit: PowerUnit) -> Power {
+    public func to(unit: PowerUnit) -> Power {
         return Power(value: self.value * self.unit.rawValue * PowerUnit.watt.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -61,7 +61,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Power, right: Power, operation: (Double, Double) -> Double) -> Power {
+public func compute(_ left: Power, right: Power, operation: (Double, Double) -> Double) -> Power {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -82,7 +82,7 @@ public func *(left: Power, right: Power) -> Power {
 
 public func /(left: Power, right: Power) throws -> Power {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

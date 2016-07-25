@@ -31,7 +31,7 @@ public struct Area {
         self.unit = unit
     }
 
-    public func to(unit unit: AreaUnit) -> Area {
+    public func to(unit: AreaUnit) -> Area {
         return Area(value: self.value * self.unit.rawValue * AreaUnit.squareMeter.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -66,7 +66,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Area, right: Area, operation: (Double, Double) -> Double) -> Area {
+public func compute(_ left: Area, right: Area, operation: (Double, Double) -> Double) -> Area {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -87,7 +87,7 @@ public func *(left: Area, right: Area) -> Area {
 
 public func /(left: Area, right: Area) throws -> Area {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

@@ -27,7 +27,7 @@ public struct Angle {
         self.unit = unit
     }
 
-    public func to(unit unit: AngleUnit) -> Angle {
+    public func to(unit: AngleUnit) -> Angle {
         return Angle(value: self.value * self.unit.rawValue * AngleUnit.degree.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -46,7 +46,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Angle, right: Angle, operation: (Double, Double) -> Double) -> Angle {
+public func compute(_ left: Angle, right: Angle, operation: (Double, Double) -> Double) -> Angle {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -67,7 +67,7 @@ public func *(left: Angle, right: Angle) -> Angle {
 
 public func /(left: Angle, right: Angle) throws -> Angle {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw Error.dividedByZero
     }
 
     return compute(left, right: right, operation: /)
