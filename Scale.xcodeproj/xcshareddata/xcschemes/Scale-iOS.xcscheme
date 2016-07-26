@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "Scale_Example.app"
-               BlueprintName = "Scale_Example"
-               ReferencedContainer = "container:Scale.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Scale_Tests.xctest"
-               BlueprintName = "Scale_Tests"
+               BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+               BuildableName = "Scale.framework"
+               BlueprintName = "Scale-iOS"
                ReferencedContainer = "container:Scale.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Scale_Tests.xctest"
-               BlueprintName = "Scale_Tests"
+               BlueprintIdentifier = "D5B2E8A81C3A780C00C0327D"
+               BuildableName = "Scale-iOS-Tests.xctest"
+               BlueprintName = "Scale-iOS-Tests"
                ReferencedContainer = "container:Scale.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Scale_Example.app"
-            BlueprintName = "Scale_Example"
+            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BuildableName = "Scale.framework"
+            BlueprintName = "Scale-iOS"
             ReferencedContainer = "container:Scale.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Scale_Example.app"
-            BlueprintName = "Scale_Example"
+            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BuildableName = "Scale.framework"
+            BlueprintName = "Scale-iOS"
             ReferencedContainer = "container:Scale.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -94,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Scale_Example.app"
-            BlueprintName = "Scale_Example"
+            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BuildableName = "Scale.framework"
+            BlueprintName = "Scale-iOS"
             ReferencedContainer = "container:Scale.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
