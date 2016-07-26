@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Scale"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "Unit converter in Swift"
 
   s.homepage         = "https://github.com/onmyway133/Scale"
@@ -13,12 +13,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/Output/**/*'
-  s.resource_bundles = {
-    'Scale' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/Output/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'Sources/**/*'
 end
