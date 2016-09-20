@@ -38,7 +38,7 @@ public struct Length {
         self.unit = unit
     }
 
-    public func to(unit unit: LengthUnit) -> Length {
+    public func to(unit: LengthUnit) -> Length {
         return Length(value: self.value * self.unit.rawValue * LengthUnit.meter.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -101,7 +101,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Length, right: Length, operation: (Double, Double) -> Double) -> Length {
+public func compute(_ left: Length, right: Length, operation: (Double, Double) -> Double) -> Length {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -122,7 +122,7 @@ public func *(left: Length, right: Length) -> Length {
 
 public func /(left: Length, right: Length) throws -> Length {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw ScaleError.dividedByZero
     }
 
     return compute(left, right: right, operation: /)

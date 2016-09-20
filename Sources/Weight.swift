@@ -37,7 +37,7 @@ public struct Weight {
         self.unit = unit
     }
 
-    public func to(unit unit: WeightUnit) -> Weight {
+    public func to(unit: WeightUnit) -> Weight {
         return Weight(value: self.value * self.unit.rawValue * WeightUnit.gram.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -96,7 +96,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Weight, right: Weight, operation: (Double, Double) -> Double) -> Weight {
+public func compute(_ left: Weight, right: Weight, operation: (Double, Double) -> Double) -> Weight {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -117,7 +117,7 @@ public func *(left: Weight, right: Weight) -> Weight {
 
 public func /(left: Weight, right: Weight) throws -> Weight {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw ScaleError.dividedByZero
     }
 
     return compute(left, right: right, operation: /)
