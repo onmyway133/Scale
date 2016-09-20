@@ -29,7 +29,7 @@ public struct Energy {
         self.unit = unit
     }
 
-    public func to(unit unit: EnergyUnit) -> Energy {
+    public func to(unit: EnergyUnit) -> Energy {
         return Energy(value: self.value * self.unit.rawValue * EnergyUnit.joule.rawValue / unit.rawValue, unit: unit)
     }
 }
@@ -56,7 +56,7 @@ public extension Double {
     }
 }
 
-public func compute(left: Energy, right: Energy, operation: (Double, Double) -> Double) -> Energy {
+public func compute(_ left: Energy, right: Energy, operation: (Double, Double) -> Double) -> Energy {
     let (min, max) = left.unit.rawValue < right.unit.rawValue ? (left, right) : (right, left)
     let result = operation(min.value, max.to(unit: min.unit).value)
 
@@ -77,7 +77,7 @@ public func *(left: Energy, right: Energy) -> Energy {
 
 public func /(left: Energy, right: Energy) throws -> Energy {
     guard right.value != 0 else {
-        throw Error.DividedByZero
+        throw ScaleError.dividedByZero
     }
 
     return compute(left, right: right, operation: /)
