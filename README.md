@@ -6,6 +6,7 @@ Unit converter in Swift
 [![License](https://img.shields.io/cocoapods/l/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
 [![Platform](https://img.shields.io/cocoapods/p/Scale.svg?style=flat)](http://cocoapods.org/pods/Scale)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+<img src="https://img.shields.io/badge/%20in-swift%203.0-orange.svg">
 
 ![](Screenshots/Banner.png)
 
