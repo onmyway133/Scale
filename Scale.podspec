@@ -1,10 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "Scale"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "Unit converter in Swift"
-
   s.homepage         = "https://github.com/onmyway133/Scale"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Khoa Pham" => "onmyway133@gmail.com" }
   s.source           = { :git => "https://github.com/onmyway133/Scale.git", :tag => s.version.to_s }
